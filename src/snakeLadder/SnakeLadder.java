@@ -2,7 +2,7 @@ package snakeLadder;
 
 public class SnakeLadder {
 	
-int Position = 0;	
+	int Position = 0;
 	
 	public static void main(String []args) {
 				
