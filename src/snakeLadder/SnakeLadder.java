@@ -14,6 +14,8 @@ public class SnakeLadder {
 	}	
 	public int playOption() {
 		int newPosition = 0;
+		while(Position != 100) {
+			Position = Position;
 		dieValue = rollDie();
 		System.out.println("Die Value" +dieValue);						
 		Random r = new Random();
@@ -32,8 +34,12 @@ public class SnakeLadder {
 			System.out.println("You are currently on Snake ");
 			newPosition = snake();
 		}
+		}	
+		if(Position < 0) {
+			Position = 0;
+		}
+		System.out.println("Player Position" + Position);
 		return newPosition;
-
 	}
 	public static int ladder() {
 		Position = Position + dieValue;
@@ -51,5 +57,6 @@ public class SnakeLadder {
 		SnakeLadder snakeLadder = new SnakeLadder();		
 		snakeLadder.rollDie();
 		snakeLadder.playOption();
+		
 	}
 }
