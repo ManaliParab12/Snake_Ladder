@@ -38,6 +38,9 @@ public class SnakeLadder {
 		if(Position < 0) {
 			Position = 0;
 		}
+		if(Position > 100) {
+			Position = Position;
+		}
 		System.out.println("Player Position" + Position);
 		return newPosition;
 	}
