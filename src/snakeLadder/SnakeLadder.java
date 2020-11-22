@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class SnakeLadder {
 	
-	int Position = 0;
+	static int Position = 0;
 	static int dieValue;
 	
 	public int rollDie() {
@@ -34,6 +34,14 @@ public class SnakeLadder {
 		}
 		return newPosition;
 
+	}
+	public static int ladder() {
+		Position = Position + dieValue;
+		return Position;	
+	}
+	public static int snake() {
+		Position = Position - dieValue;
+		return Position;	
 	}
 			
 	public static void main(String []args) {
