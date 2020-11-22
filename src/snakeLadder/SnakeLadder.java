@@ -5,40 +5,43 @@ import java.util.Random;
 public class SnakeLadder {
 	
 	int Position = 0;
+	static int dieValue;
 	
-	public int rollDice() {
+	public int rollDie() {
 		Random r = new Random();
 		int Die = r.nextInt(6) + 1;
 		return Die;
 	}	
-	
-public void playOption() {
-		
+	public int playOption() {
+		int newPosition = 0;
+		dieValue = rollDie();
+		System.out.println("Die Value" +dieValue);						
 		Random r = new Random();
 		int option = r.nextInt(3);
 		
-		if(option == 0) {
-			
-			System.out.println("No Play");		
+		if(option == 0) {			
+			System.out.println("No Play");
+			newPosition = Position;
 		}
 		else if (option == 1) {
 			
-			Position = Position + rollDice();	
-					
-			System.out.println("You are currently on Ladder " + Position);			
-		}
-		else {
-			Position = Position - rollDice();
-			System.out.println("You are currently on Snake " + Position);			
+			System.out.println("You are currently on Ladder ");
+				newPosition = ladder();			
 			}
+		else if (option == 2) {
+			System.out.println("You are currently on Snake ");
+			newPosition = snake();
 		}
-		
+		return newPosition;
+
+	}
+			
 	public static void main(String []args) {
 		
 		System.out.println("Welcome to Snake & Ladder Game");
 		
 		SnakeLadder snakeLadder = new SnakeLadder();		
-		snakeLadder.rollDice();
+		snakeLadder.rollDie();
 		snakeLadder.playOption();
 	}
 }
